@@ -7,3 +7,4 @@
 ### My Learnings
 
 - What are child processes?
+- Ownership in rust.
