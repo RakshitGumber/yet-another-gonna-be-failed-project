@@ -1,6 +1,4 @@
-# This is the list of resources I used to make the Project.
-
-Thread - https://chatgpt.com/c/68dd487d-54c0-8333-aa58-af9fa9282e38
+# Resources
 
 - [Learning Temporal Architecture](https://medium.com/data-science-collective/system-design-series-a-step-by-step-breakdown-of-temporals-internal-architecture-52340cc36f30)
 - [Build an Async Runtime](https://medium.com/%40bartekwinter3/build-an-async-runtime-in-rust-part-1-hooch-d43e3d96c3e6?utm_source=chatgpt.com)
