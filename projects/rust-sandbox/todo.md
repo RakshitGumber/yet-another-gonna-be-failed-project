@@ -2,7 +2,8 @@
 
 ## Learn Rust Essentials
 
-- Ownership, lifetimes, traits, generics
+- Ownership -> Done
+- traits, generics, lifetimes
 - Rc, Arc, Mutex, RwLock, RefCell
 - Send and Sync traits
 - Pin and Unpin (for async)
@@ -49,7 +50,6 @@
 | `crossbeam`          | Lock-free data structures       |
 | `parking_lot`        | Fast synchronization primitives |
 
-
 ## Final Project Ideas
 
 “MiniTokio” – a small async runtime that can:
@@ -70,4 +70,3 @@ Serialize workflow state
 Schedule tasks later (like Temporal.io)
 
 “RustScript” – a toy scripting runtime that executes simple code on your async executor.
-
