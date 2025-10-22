@@ -28,3 +28,14 @@
   `Infrastructure to run multiple test cases automatically, collect results, handle failures, and output feedback`
 - Drop privileges / capabilities after isolation
 - Close file descriptors
+
+| Domain                            | Why It’s Needed                   |
+| --------------------------------- | --------------------------------- |
+| 🦀 **Rust Systems Programming**   | Runtime + safety + async          |
+| 🧠 **Async / Concurrency**        | Task execution, schedulers        |
+| ⚙️ **Linux Internals**            | Syscalls, namespaces, scheduling  |
+| 🧰 **Sandboxing & Security**      | Containment, privilege isolation  |
+| 🌐 **Networking & IO**            | Async communication & event loops |
+| 🧬 **WASM or Embedded Scripting** | Running user-defined code safely  |
+
+https://chatgpt.com/c/68f4ffdd-7bf8-8320-9952-d1d162f41f66
