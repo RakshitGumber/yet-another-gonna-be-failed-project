@@ -49,6 +49,29 @@ The MVP will have the following features
 
 ---
 
+## Things I did (I may regret them) - 24th Oct'25
+
+- **Deleted the backend**
+
+  I just deleted the backend as it was not doing anything. It was just adding a layer that says made using fastAPI.
+
+- **Removing AI written Scrap**
+
+  - Removed the authStore and the flowStore.
+  - Removed the API file from the frontend as all the backend routes were obscolete.
+  - Minor tweaking to clean the code base a little
+    - Removed the unaccessible routes.
+  - Removed AI Written nodes from the registry
+  - Removing the old canvas because it was adding complexity to the simple data(I will regret this the most)
+
+- **Not Writing the runtime with Rust**
+  - I don't know Rust. But, to look cool I am using rust in this project.
+  - I am writing the runtime using rust. It will either be a success. or the list will continue to grow.
+  - 15 mins later - I am not using Rust for sake of increasing complexity.
+
+- **Making the CLI Toolkit with Python**
+  - 
+
 ## What I learned
 
 - python
