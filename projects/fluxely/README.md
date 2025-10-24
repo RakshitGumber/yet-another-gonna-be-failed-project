@@ -34,6 +34,21 @@ Remember there is a reason why this repo is yet another **Failed** project. This
 
 ---
 
+# Things I learned after continuing this project for the 3rd time
+
+## Creating the new MVP
+
+I am starting with creating the MVP at first. I actualy had an MVP but the project is changed a lot. So, I am working back on creating the MVP.
+
+The MVP will have the following features
+
+- ReactFlow Editor
+- Database connection and local store for saving the nodes.
+- Runner - The core mechanic I am working on. This is the reason I am creating the MVP again. I want it to be really extensible able to run on computer locally through CLI and on browser.
+- CLI Tool - The CLI first approach.
+
+---
+
 ## What I learned
 
 - python
