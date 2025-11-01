@@ -65,12 +65,51 @@ The MVP will have the following features
   - Removing the old canvas because it was adding complexity to the simple data(I will regret this the most)
 
 - **Not Writing the runtime with Rust**
+
   - I don't know Rust. But, to look cool I am using rust in this project.
   - I am writing the runtime using rust. It will either be a success. or the list will continue to grow.
   - 15 mins later - I am not using Rust for sake of increasing complexity.
 
 - **Making the CLI Toolkit with Python**
-  - 
+
+  - I created the CLI tool using the Typer and it is not able to run any command right now.
+
+- **Learning the architecture**
+
+  - **Frontend**
+
+    - React for making the frontend
+    - Save flow through REST API
+    - Node assets
+
+  - **Backend**
+
+    - FastAPI for CRUD, validation, versioning
+    - Authentication, roles and rate limit
+    - Worker pool
+    - Store in Database: PostgreSQL and Redis for Queues
+
+  - **CLI**
+
+    - Authenticate against the backend.
+    - Save token locally in th config file
+    - Local run uses a local runtime engine that does not execute arbitrary system actions.
+
+  - **Execution Sandbox**
+
+    - WebAssembly modules for user provided code
+
+  [Got this part from chatgpt](https://chatgpt.com/c/6905a165-2104-8321-82bf-b710bd992a4c)
+  Diagram (brief):
+  Frontend ↔ Backend (FastAPI) ↔ DB/Storage
+  CLI ↔ Backend (auth + flow fetch) or CLI ↔ Local files → Local Runtime (sandboxed)
+  Worker pool (K8s) executes flows server-side in containers / Wasm engine.
+
+---
+
+## Data Schemas
+
+---
 
 ## What I learned
 
