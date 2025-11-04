@@ -171,9 +171,117 @@ The MVP will have the following features
   }
   ```
 
+  After the configuration Now it was time to instantiate the logger
+
+  ```
+  #### main.py ####
+
+  import logging.config
+  from config.log_config import LOGGING_CONFIG
+
+  logging.config.dictConfig(LOGGING_CONFIG)
+  ```
+
+  All the requests will be logged in the .log file
+
+  This also requires a middleware that could be used with the FastAPI request.
+
+  ```
+  #### log_middleware.py ####
+
+  import json
+  import uuid
+  from fastapi import HTTPException, Request
+  from fastapi.concurrency import iterate_in_threadpool
+
+  from core.logger import log_error, log_request
+
+  async def log_middleware(request: Request, call_next):
+  req_id = str(uuid.uuid4())
+  try: #### request ####
+  request.state.req_id = req_id
+  try:
+  raw_body = await request.body()
+  request.state.body = (
+  json.loads(raw_body.decode() or "{}") if raw_body else {}
+  )
+  except Exception:
+  request.state.body = {}
+
+          log_request(request)
+
+          #### response ####
+          response = await call_next(request)
+          response_body = ""
+          if response.headers.get("content-type") == "application/json":
+              response_body = [chunk async for chunk in response.body_iterator]
+              response.body_iterator = iterate_in_threadpool(iter(response_body))
+          return response
+      except Exception as e:
+          # Unexpected error handling
+          log_error(req_id, {"error_message": "ERR_UNEXPECTED"})
+          raise HTTPException(status_code=500, detail="ERR_UNEXPECTED")
+  ```
+
 ---
 
 ## Data Schemas
+
+For the Logs it would also requires the schemas
+
+```
+from pydantic import BaseModel
+
+
+class RequestInfo:
+    def __init__(self, request) -> None:
+        self.request = request
+
+    @property
+    def method(self) -> str:
+        return str(self.request.url.path)
+
+    @property
+    def route(self) -> str:
+        return self.request["path"]
+
+    @property
+    def ip(self) -> str:
+        return str(self.request.client.host)
+
+    @property
+    def url(self) -> str:
+        return str(self.request.url)
+
+    @property
+    def host(self) -> str:
+        return str(self.request.url.hostname)
+
+    @property
+    def headers(self) -> dict:
+        return {key: value for key, value in self.request.headers.items()}
+
+    @property
+    def body(self) -> dict:
+        return self.request.state.body
+
+
+class RequestLog(BaseModel):
+    req_id: str
+    method: str
+    route: str
+    ip: str
+    url: str
+    host: str
+    body: dict
+    headers: dict
+
+
+class ErrorLog(BaseModel):
+    req_id: str
+    error_message: str
+
+```
 
 ---
 
