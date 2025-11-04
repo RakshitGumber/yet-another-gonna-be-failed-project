@@ -99,11 +99,77 @@ The MVP will have the following features
 
     - WebAssembly modules for user provided code
 
+- Using the removed code and cleaning this a bit
+- **Warning** - Don't use AI Learn then fix. AI add scrap that I don't know why it is there.
+- I cleaned up the canvas and the editor and split the code and now it is easy to understand and scalable aswell.
+
   [Got this part from chatgpt](https://chatgpt.com/c/6905a165-2104-8321-82bf-b710bd992a4c)
   Diagram (brief):
   Frontend ↔ Backend (FastAPI) ↔ DB/Storage
   CLI ↔ Backend (auth + flow fetch) or CLI ↔ Local files → Local Runtime (sandboxed)
   Worker pool (K8s) executes flows server-side in containers / Wasm engine.
+
+- Tried using the github Copilot and made:
+  - Logging
+  - User AUthentication
+  - User Authorization in frontend
+  - added save button for the flow
+  - created CRUD for flows
+  - created route to run the flow
+  - orchestrate the workflow
+
+> I hate what AI did to my code. Now I will spend the next few days fixing the code. But, hey now I have the basic crashed app.
+
+- **Logging** - I created logging using a medium guide I totaly love this. It is beautiful.
+
+  - Ref for use [Logging in Python and Applied to FastAPI](https://medium.com/@v0220225/backend-logging-in-python-and-applied-to-fastapi-7b47118d1d92)
+
+  **Process I followed fron the Guide**
+
+  Created a config for logging - This config is used by the app to configure all the routes with the logger
+
+  ```
+  #### log_config.py ####
+
+  LOGGING_CONFIG = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "default": {
+            "()": "uvicorn.logging.DefaultFormatter",
+            "fmt": "[%(levelname)s] - %(asctime)s - %(name)s - %(message)s",
+        },
+    },
+    "filters": {
+        "sensitive_data_filter": {
+            "()": SensitiveDataFilter,
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "default",
+            "level": "DEBUG",
+            "stream": "ext://sys.stdout",
+            "filters": ["sensitive_data_filter"],
+        },
+        "file": {
+            "formatter": "default",
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "filename": "my_log.log",
+            "mode": "a",
+        },
+    },
+    "loggers": {
+        "my_customer_logger": {
+            "handlers": ["file", "console"],
+            "level": "DEBUG",
+            "propagate": False,
+        }
+    },
+  }
+  ```
 
 ---
 
