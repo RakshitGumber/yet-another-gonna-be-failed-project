@@ -49,7 +49,7 @@ The MVP will have the following features
 
 ---
 
-## Things I did (I may regret them) - 24th Oct'25
+## Things I did (I may regret them) - Since 24th Oct'25
 
 - **Deleted the backend**
 
