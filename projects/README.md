@@ -7,4 +7,3 @@ Even though I am still working on many of them. But, they are arranged on the ba
 ## Navigation
 
 - [Fluxely](./fluxely/README.md)
-- [Simply-Project](./simply-project/README.md)
