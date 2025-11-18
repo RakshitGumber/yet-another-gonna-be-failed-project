@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const route = useRoute();
-const name = route.params.name;
+const name = route.params.name as string;
+
+useHead({
+  title: `${name} | YAGBFP`,
+});
 </script>
 
 <template>
