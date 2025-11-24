@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <DocHeader />
+  <div class="bg-orange-500">
     <slot></slot>
-    <DocFooter />
   </div>
 </template>

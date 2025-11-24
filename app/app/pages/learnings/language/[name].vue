@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: "docLayout",
+});
+</script>
+
 <template>
-  <div class="font-bold">Language Name Notes</div>
+  <NuxtLayout><div>Hello</div></NuxtLayout>
 </template>
