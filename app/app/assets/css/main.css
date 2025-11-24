@@ -3,12 +3,14 @@
 
 :root {
     --background: black;
-    --foreground: white
+    --foreground: white;
+    --secondary-text: #8e8e8e;
 }
 
 @theme {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
+    --color-secondary: var(--secondary-text);
     --font-heading: "Sora", sans-serif;
     --font-body: "Mulish", sans-serif;
 }
