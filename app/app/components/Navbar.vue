@@ -1,14 +1,34 @@
 <template>
-  <nav
-    class="xl:h-32 h-20 w-full px-4 xl:px-20 flex items-center justify-between"
-  >
-    <div class="p-3 xl:px-4 xl:py-2">
-      <NuxtLink to="/">
-        <h1 class="xl:text-2xl text-xl font-semibold font-heading">
-          Rakshit Gumber
-        </h1>
-      </NuxtLink>
+  <header class="h-32 px-24 flex items-center justify-between">
+    <div class="p-4">
+      <h1
+        class="text-heading font-heading tracking-widest font-semibold text-4xl"
+      >
+        YAGBFP
+      </h1>
     </div>
-    <div class="hidden xl:flex"></div>
-  </nav>
+    <nav class="px-4 flex gap-6 items-center justify-end">
+      <div class="flex items-center gap-3">
+        <NuxtLink to="/learnings" class="px-4 py-2 text-xl font-medium"
+          >Learnings</NuxtLink
+        >
+        <NuxtLink to="/projects" class="px-4 py-2 text-xl font-medium"
+          >Projects</NuxtLink
+        >
+        <div class="flex items-center">
+          <button class="text-2xl px-4 py-2 cursor-pointer">
+            <Icon name="solar:file-broken" :ssr="true" class="flex" />
+          </button>
+          <button class="text-2xl px-4 py-2 cursor-pointer">
+            <Icon name="solar:moon-broken" :ssr="true" class="flex" />
+          </button>
+        </div>
+      </div>
+      <button
+        class="text-background font-semibold text-xl py-3 px-6 bg-success rounded-xl cursor-pointer"
+      >
+        Let's Work
+      </button>
+    </nav>
+  </header>
 </template>

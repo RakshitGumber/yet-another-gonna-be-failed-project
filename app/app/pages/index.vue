@@ -10,8 +10,6 @@ useSeoMeta({
 </script>
 
 <template>
-  <div>
-    <Navbar />
-    <Hero />
-  </div>
+  <Navbar />
+  <Hero />
 </template>

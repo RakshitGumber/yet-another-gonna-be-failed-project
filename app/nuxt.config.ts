@@ -3,8 +3,15 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "@nuxt/icon"],
   css: ["./app/assets/css/main.css"],
+  icon: {
+    mode: "css",
+    cssLayer: "base",
+    serverBundle: {
+      collections: ["solar"],
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
