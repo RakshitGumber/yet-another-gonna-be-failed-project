@@ -8,6 +8,7 @@
     --heading-text: #B8BACF;
     --border: #383B5A;
     --button-success: #54B77D;
+    --secondary-background: #B7548F;
 }
 
 @theme {
@@ -17,6 +18,7 @@
     --color-heading: var(--heading-text);
     --color-border: var(--border);
     --color-success: var(--button-success);
+    --color-bgsecond: var(--secondary-background);
     --font-heading: "Sora", monospace;
     --font-body: "Inter", monospace;
 }
