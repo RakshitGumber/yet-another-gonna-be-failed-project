@@ -10,6 +10,11 @@
     <nav class="px-4 flex gap-6 items-center justify-end">
       <div class="flex items-center gap-3">
         <NuxtLink
+          to="/blogs"
+          class="px-4 py-2 text-xl font-medium hover:underline underline-offset-2"
+          >Blogs</NuxtLink
+        >
+        <NuxtLink
           to="/learnings"
           class="px-4 py-2 text-xl font-medium hover:underline underline-offset-2"
           >Learnings</NuxtLink

@@ -12,4 +12,5 @@ useSeoMeta({
 <template>
   <Navbar />
   <Hero />
+  <hr class="mx-24 h-0.5" />
 </template>
