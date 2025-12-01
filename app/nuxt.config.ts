@@ -42,5 +42,12 @@ export default defineNuxtConfig({
       repo: "yet-another-gonna-be-failed-project",
       branch: "main",
     },
+    route: "/admin",
+  },
+  nitro: {
+    prerender: {
+      routes: ["/"],
+      crawlLinks: true,
+    },
   },
 });
