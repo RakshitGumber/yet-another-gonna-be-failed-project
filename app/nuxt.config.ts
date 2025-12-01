@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/content", "@nuxt/icon"],
+  modules: ["@nuxt/content", "@nuxt/icon", "nuxt-studio"],
   css: ["./app/assets/css/main.css"],
   icon: {
     mode: "css",
@@ -33,6 +33,14 @@ export default defineNuxtConfig({
           depth: 3,
         },
       },
+    },
+  },
+  studio: {
+    repository: {
+      provider: "github",
+      owner: "RakshitGumber",
+      repo: "yet-another-gonna-be-failed-project",
+      branch: "main",
     },
   },
 });
